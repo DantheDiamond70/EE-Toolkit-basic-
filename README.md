@@ -1,2 +1,2 @@
 # EE-Toolkit
-Ohm's law Calculator in Phyton
+Ohm's law Calculator in Pyhton
