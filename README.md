@@ -1,5 +1,5 @@
 # EE-Toolkit
-Ohm's law Calculator in Python
+Electrical Calculator in Python
 
 suitable for students and beginners learning Python
 
@@ -18,7 +18,7 @@ for mobile users, you can paste the code into any Python app and run it
 ```
 ===EE TOOLKIT===
 
-Ohm's Law
+Electrical Calculations
 
 Calculate?: V, I, R (or quit) V
 Calculating Voltage: 
