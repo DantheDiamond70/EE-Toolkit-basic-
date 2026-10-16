@@ -31,7 +31,5 @@ Continue, Main menu or Quit?
 ```
 
 ## Coming soon
-- Power
-- Energy
 - Three-phase power
 - Series and parallel resistors
