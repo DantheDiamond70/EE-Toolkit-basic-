@@ -3,12 +3,12 @@ def toolkit():
     
     
     print("===EE TOOLKIT===\n")
-    print("Ohm's Law\n")
+    print("Electrical Calculations\n")
     
     
     while True:
     
-        text = input("Calculate?: V, I, R (or quit)\n")
+        text = input("Calculate?: V, I, R, W, kWh (or quit)\n")
     
         if text.lower() == "quit":
             print("Stopped Successfully")
@@ -29,8 +29,17 @@ def toolkit():
             Resistance()
             break
             
+        elif text.upper() == "W":
+            print("Calculating Power:\n")
+            power()
+            break
+        elif text.upper() == "KWH":
+            print("Calculating Electrical Energy:\n")
+            energy()
+            break
+            
         else:
-            print("Enter V, I, R or quit only")
+            print("Enter V, I, R, W, kWh or quit only")
   
 def Voltage():
        
@@ -208,4 +217,168 @@ def Resistance():
             print("Please choose between the three")
             continue
         
-toolkit()
+def power():
+    while True:
+     
+        v = input("Enter amount of Voltage (or quit): ")
+        
+        if v.lower() == "quit":
+            print("Stopped Successfully")
+            return
+            
+            
+        try:
+            v = float(v)
+            print(v)
+            break
+        except ValueError:
+           print("That is not a number, try again.")
+        continue
+        
+    while True:
+    
+        i = input("Enter amount of Current: ")
+        
+        try:
+            i = float(i)
+            print(i)
+      
+            p1 = v * i
+            print("Power:",p1,"W")
+            break          
+            
+        except ValueError:
+            print("That is not a number, try again.")
+        continue
+        
+    while True:
+            
+        e = input("Calculate energy, Continue, Main menu or Quit?\n")
+        if e.lower() == "continue":
+            print("Calculating Power:\n")
+            power()
+            return
+        elif e.lower() == "main menu":
+            toolkit()
+            return
+        elif e.lower() == "quit":
+            print("Stopped Successfully")
+            return
+        elif e.lower() == "calculate energy":
+            energy1(p1)
+            return p1
+        else:
+            print("Please choose between the four")
+            continue
+            
+def energy1(p1):
+    print("Calculating Electrical Energy:\n")
+    while True:
+        
+        p = float(p1)
+        h1 = input("Enter total hours: ")
+        
+        try:
+            h1 = float(h1)
+            print(h1)
+        
+            if h1 < 0:
+                print("Hours cannot be in negative")
+                continue
+            
+            kwh = (p / 1000) * h1
+            print("Energy:",kwh,"kWh")
+            break
+            
+        except ValueError:
+            print("That is not a number, try again.")
+            continue
+        
+    while True:
+            
+        e = input("Continue, Main menu or Quit?\n")
+        if e.lower() == "continue":
+            print("Calculating Electrical Energy:\n")
+            energy()
+            return
+        elif e.lower() == "main menu":
+            toolkit()
+            return
+        elif e.lower() == "quit":
+            print("Stopped Successfully")
+            return
+        else:
+            print("Please choose between the three")
+            continue
+
+def energy():
+    
+    while True:
+     
+        v = input("Enter amount of Voltage (or quit): ")
+        
+        if v.lower() == "quit":
+            print("Stopped Successfully")
+            return
+            
+            
+        try:
+            v = float(v)
+            print(v)
+            break
+        except ValueError:
+           print("That is not a number, try again.")
+        continue
+    
+    while True:
+    
+        i = input("Enter amount of Current: ")
+        
+        try:
+            i = float(i)
+            print(i)
+       
+            p = v * i
+            print("Power:",p,"W")
+            break          
+            
+        except ValueError:
+            print("That is not a number, try again.")
+        continue
+        
+    while True:
+    
+        h = input("Enter total hours: ")
+        
+        try:
+            h = float(h)
+            print(h)
+       
+            if h < 0:
+                print("Time can't be a negative number")
+                continue
+            kwh = (p / 1000) * h
+            print("Electrical Energy:",kwh,"kWh")
+            break          
+            
+        except ValueError:
+            print("That is not a number, try again.")
+        continue
+        
+    while True:
+            
+        e = input("Continue, Main menu or Quit?\n")
+        if e.lower() == "continue":
+            print("Calculating Electrical Energy:\n")
+            energy()
+            return
+        elif e.lower() == "main menu":
+            toolkit()
+            return
+        elif e.lower() == "quit":
+            print("Stopped Successfully")
+            return
+        else:
+            print("Please choose between the three")
+            continue
+toolkit()          
